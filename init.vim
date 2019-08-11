@@ -61,7 +61,7 @@ function! PackagerInit() abort
     call packager#add('NLKNguyen/papercolor-theme')
     call packager#add('prabirshrestha/async.vim')
     call packager#add('prabirshrestha/vim-lsp', {'type': 'opt'})
-    call packager#add('w0rp/ale', {'type': 'opt'})
+    call packager#add('dense-analysis/ale', {'type': 'opt'})
     call packager#add('maximbaz/lightline-ale')
     call packager#add('farmergreg/vim-lastplace')
     call packager#add('jpalardy/vim-slime')
