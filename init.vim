@@ -53,7 +53,7 @@ function! PackagerInit() abort
     call packager#add('vimlab/split-term.vim')
     call packager#add('qpkorr/vim-bufkill')
     call packager#add('justinmk/vim-dirvish')
-    call packager#add('junegunn/fzf.vim')
+    call packager#add('srstevenson/vim-picker')
     call packager#add('RRethy/vim-hexokinase', {'do': 'make hexokinase'})
     call packager#add('machakann/vim-highlightedyank')
     call packager#add('sheerun/vim-polyglot')
@@ -188,13 +188,10 @@ let g:lightline.active = {
 let g:slime_target = 'neovim'
 let g:slime_dont_ask_default = 1
 
-" fzf
-nnoremap <leader>b :Buffers<cr>
-
-augroup Fzf
-    autocmd FileType fzf set laststatus=0
-                \ | autocmd BufLeave <buffer> set laststatus=2
-augroup END
+" picker
+nnoremap <leader>b :PickerBuffer<cr>
+nnoremap <leader>e :PickerEdit<cr>
+nnoremap <leader>s :PickerSplit<cr>
 
 " hexokinase
 nnoremap <leader>c :HexokinaseToggle<cr>
@@ -253,9 +250,6 @@ map <C-l> zz
 nnoremap <leader>i :e $MYVIMRC<cr>
 nnoremap <leader>r :so $MYVIMRC<cr>
 nnoremap <leader>n :set number! relativenumber!<cr>
-
-nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<cr>
-nnoremap <leader>s :split <C-R>=expand('%:p:h') . '/'<cr>
 
 " buffers
 noremap <A-Tab> :b#<cr>
