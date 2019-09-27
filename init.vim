@@ -54,7 +54,7 @@ function! PackagerInit() abort
     call packager#add('qpkorr/vim-bufkill')
     call packager#add('justinmk/vim-dirvish')
     call packager#add('junegunn/fzf.vim')
-    call packager#add('RRethy/vim-hexokinase')
+    call packager#add('RRethy/vim-hexokinase', {'do': 'make hexokinase'})
     call packager#add('machakann/vim-highlightedyank')
     call packager#add('sheerun/vim-polyglot')
     call packager#add('itchyny/lightline.vim')
