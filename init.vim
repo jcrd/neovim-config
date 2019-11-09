@@ -54,7 +54,7 @@ function! PackagerInit() abort
     call packager#add('qpkorr/vim-bufkill')
     call packager#add('justinmk/vim-dirvish')
     call packager#add('srstevenson/vim-picker')
-    call packager#add('RRethy/vim-hexokinase', {'do': 'make hexokinase'})
+    call packager#add('norcalli/nvim-colorizer.lua')
     call packager#add('machakann/vim-highlightedyank')
     call packager#add('sheerun/vim-polyglot')
     call packager#add('itchyny/lightline.vim')
@@ -193,8 +193,8 @@ nnoremap <leader>b :PickerBuffer<cr>
 nnoremap <leader>e :PickerEdit<cr>
 nnoremap <leader>s :PickerSplit<cr>
 
-" hexokinase
-nnoremap <leader>c :HexokinaseToggle<cr>
+" colorizer
+nnoremap <leader>c :ColorizerToggle<cr>
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 150
