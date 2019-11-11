@@ -231,12 +231,14 @@ augroup Dirvish
 augroup END
 
 " terminal
-augroup Term
-    " disable line numbers in terminals
-    autocmd TermOpen * setlocal nonumber norelativenumber
-    " start in insert mode
-    autocmd TermOpen * startinsert
-augroup END
+if has('nvim')
+    augroup Term
+        " disable line numbers in terminals
+        autocmd TermOpen * setlocal nonumber norelativenumber
+        " start in insert mode
+        autocmd TermOpen * startinsert
+    augroup END
+endif
 
 " enable omni completion
 set omnifunc=syntaxcomplete#Complete
