@@ -54,7 +54,6 @@ function! PackagerInit() abort
     call packager#add('qpkorr/vim-bufkill')
     call packager#add('justinmk/vim-dirvish')
     call packager#add('srstevenson/vim-picker')
-    call packager#add('norcalli/nvim-colorizer.lua')
     call packager#add('machakann/vim-highlightedyank')
     call packager#add('sheerun/vim-polyglot')
     call packager#add('itchyny/lightline.vim')
@@ -65,6 +64,10 @@ function! PackagerInit() abort
     call packager#add('maximbaz/lightline-ale')
     call packager#add('farmergreg/vim-lastplace')
     call packager#add('jpalardy/vim-slime')
+
+    if has('nvim')
+        call packager#add('norcalli/nvim-colorizer.lua')
+    endif
 
     call packager#add('jcrd/vim-slash')
 endfunction
@@ -194,7 +197,9 @@ nnoremap <leader>e :PickerEdit<cr>
 nnoremap <leader>s :PickerSplit<cr>
 
 " colorizer
-nnoremap <leader>c :ColorizerToggle<cr>
+if has('nvim')
+    nnoremap <leader>c :ColorizerToggle<cr>
+endif
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 150
