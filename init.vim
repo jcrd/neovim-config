@@ -206,7 +206,11 @@ let g:sneak#label = 1
 nnoremap <leader>u :MundoToggle<cr>
 
 " split-term
-nnoremap <leader>t :Term<cr>
+if has('nvim')
+    nnoremap <leader>t :Term<cr>
+else
+    nnoremap <leader>t :term<cr>
+endif
 
 " slash
 noremap <plug>(slash-after) zz
