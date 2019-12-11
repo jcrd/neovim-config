@@ -1,6 +1,13 @@
 " maintain undo history between sessions
 set undofile
 
+" use nvim's data directory settings for vim
+if !has('nvim')
+    set directory=$XDG_DATA_HOME/vim/swap//
+    set undodir=$XDG_DATA_HOME/vim/undo
+    set backupdir=.,$XDG_DATA_HOME/vim/backup
+endif
+
 " set clipboard to X11 clipboard selection
 set clipboard=unnamedplus
 
