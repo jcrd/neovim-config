@@ -77,6 +77,7 @@ function! PackagerInit() abort
     endif
 
     call packager#add('jcrd/vim-slash')
+    call packager#add('jcrd/vim-smart-filename')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
@@ -132,43 +133,10 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 set noshowmode
 
 " lightline
-
-" include project root and git branch in filename
-" requires vim-rooter and vim-fugitive
-function! LightlineFilename()
-    let fname = expand('%:p')
-    if fname !=# ''
-        let root = FindRootDirectory()
-        if root !=# '' && fname =~# '^' . root
-            let head = fugitive#head()
-            let branch = head !=# '' ? ':' . head : ''
-            let project = '[' . fnamemodify(root, ':t') . branch . ']'
-            let fname = substitute(fname, root, project, '')
-        else
-            " shorten $HOME to ~
-            if fname =~# '^' . $HOME
-                let fname = substitute(fname, $HOME, '~', '')
-            endif
-        endif
-        " convert to floating point with * 1.0
-        if strlen(fname) * 1.0 / winwidth(0) > 0.33
-            let path = split(fname, '/')
-            let spath = [path[0]]
-            for p in path[1:-2]
-                let spath += [strpart(p, 0, p[0] ==# '.' ? 2 : 1)]
-            endfor
-            let fname = join(spath, '/') . '/' . path[-1]
-        endif
-    else
-        let fname = '[No Name]'
-    endif
-    return fname
-endfunction
-
 let g:lightline = {'colorscheme': 'PaperColor'}
 
 let g:lightline.component_function = {
-            \ 'filename': 'LightlineFilename',
+            \ 'filename': 'SmartFilename',
             \ }
 
 let g:lightline.component_expand = {
