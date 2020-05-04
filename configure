@@ -3,8 +3,12 @@
 git submodule update --init pack/packager/opt/vim-packager
 
 if command -v nvim > /dev/null; then
+    cmd=nvim
     mkdir -pv ~/.local/bin
     ln -sf "$(which nvim)" ~/.local/bin/vim
 else
+    cmd=vim
     mkdir -pv ~/.local/share/vim/{swap,undo,backup}
 fi
+
+$cmd +PackagerInstall +qall
