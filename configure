@@ -3,5 +3,5 @@
 git submodule update --init pack/packager/opt/vim-packager
 
 if ! command -v nvim > /dev/null; then
-    mkdir -pv "$XDG_DATA_HOME"/vim/{swap,undo,backup}
+    mkdir -pv ~/.local/share/vim/{swap,undo,backup}
 fi
