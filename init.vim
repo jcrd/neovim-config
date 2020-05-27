@@ -186,6 +186,7 @@ let g:highlightedyank_highlight_duration = 150
 let g:sneak#label = 1
 
 " mundo
+let g:mundo_prefer_python3 = 1
 nnoremap <leader>u :MundoToggle<cr>
 
 " split-term
