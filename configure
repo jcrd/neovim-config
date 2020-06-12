@@ -11,4 +11,4 @@ else
     mkdir -pv ~/.local/share/vim/{swap,undo,backup}
 fi
 
-$cmd +PackagerInstall +qall
+$cmd +PackagerUpdate +qall
