@@ -106,6 +106,13 @@ augroup Lsp
                     \ {'pydocstyle': {'enabled': v:true}},
                     \ }}})
     endif
+    if executable('bash-language-server')
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'bash-language-server',
+                    \ 'cmd': {server_info->['bash-language-server', 'start']},
+                    \ 'whitelist': ['sh'],
+                    \ })
+    endif
     if executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'gopls',
