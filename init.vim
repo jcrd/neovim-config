@@ -96,6 +96,16 @@ augroup Lsp
                     \ 'whitelist': ['c', 'cpp'],
                     \ })
     endif
+    if executable('pyls')
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'pyls',
+                    \ 'cmd': {server_info->['pyls']},
+                    \ 'whitelist': ['python'],
+                    \ 'workspace_config': {'pyls':
+                    \ {'plugins':
+                    \ {'pydocstyle': {'enabled': v:true}},
+                    \ }}})
+    endif
     if executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'gopls',
