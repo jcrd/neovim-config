@@ -93,14 +93,14 @@ augroup Lsp
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'clangd',
                     \ 'cmd': {server_info->['clangd', '-background-index']},
-                    \ 'whitelist': ['c', 'cpp'],
+                    \ 'allowlist': ['c', 'cpp'],
                     \ })
     endif
     if executable('pyls')
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'pyls',
                     \ 'cmd': {server_info->['pyls']},
-                    \ 'whitelist': ['python'],
+                    \ 'allowlist': ['python'],
                     \ 'workspace_config': {'pyls':
                     \ {'plugins':
                     \ {'pydocstyle': {'enabled': v:true}},
@@ -110,14 +110,14 @@ augroup Lsp
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'bash-language-server',
                     \ 'cmd': {server_info->['bash-language-server', 'start']},
-                    \ 'whitelist': ['sh'],
+                    \ 'allowlist': ['sh'],
                     \ })
     endif
     if executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'gopls',
                     \ 'cmd' : {server_info->['gopls']},
-                    \ 'whitelist': ['go'],
+                    \ 'allowlist': ['go'],
                     \ })
     endif
 augroup END
