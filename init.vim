@@ -67,6 +67,8 @@ function! PackagerInit() abort
     call packager#add('NLKNguyen/papercolor-theme')
     call packager#add('prabirshrestha/async.vim')
     call packager#add('prabirshrestha/vim-lsp')
+    call packager#add('Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'})
+    call packager#add('lighttiger2505/deoplete-vim-lsp')
     call packager#add('dense-analysis/ale', {'type': 'opt'})
     call packager#add('maximbaz/lightline-ale')
     call packager#add('farmergreg/vim-lastplace')
@@ -142,6 +144,10 @@ augroup Lsp_install
 augroup END
 
 let g:lsp_diagnostics_enabled = 0
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible()? "\<c-n>" : "\<tab>"
 
 " ale
 let g:ale_lint_on_insert_leave = 1
@@ -263,8 +269,6 @@ if has('nvim')
     augroup END
 endif
 
-" enable omni completion
-set omnifunc=syntaxcomplete#Complete
 " recommended by ALE (see :help ale-completion)
 set completeopt=menu,menuone,preview,noselect,noinsert
 
