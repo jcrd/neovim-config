@@ -153,6 +153,18 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible()? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible()? "\<c-p>" : "\<s-tab>"
 
+function s:smart_carriage_return()
+   if !pumvisible() || get(complete_info(), 'selected', -1) < 0
+      return "\<CR>"
+   else
+      return "\<C-y>"
+   endif
+endfunction
+
+inoremap <expr><CR> <SID>smart_carriage_return()
+
+set completeopt=menu,menuone,preview,noselect
+
 " ale
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 50
@@ -272,9 +284,6 @@ if has('nvim')
         autocmd TermOpen * startinsert
     augroup END
 endif
-
-" recommended by ALE (see :help ale-completion)
-set completeopt=menu,menuone,preview,noselect,noinsert
 
 " center current line on screen with C-l
 map <C-l> zz
