@@ -151,6 +151,7 @@ let g:lsp_diagnostics_enabled = 0
 " deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible()? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible()? "\<c-p>" : "\<s-tab>"
 
 " ale
 let g:ale_lint_on_insert_leave = 1
