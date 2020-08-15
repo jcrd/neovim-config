@@ -219,10 +219,6 @@ let g:lightline.active = {
             \   'linter_ok' ]]
             \ }
 
-" slime
-let g:slime_target = 'neovim'
-let g:slime_dont_ask_default = 1
-
 " fzf
 nnoremap <leader>b :Buffers<cr>
 
