@@ -53,6 +53,7 @@ function! PackagerInit() abort
     call packager#add('tpope/vim-fugitive')
     call packager#add('wellle/targets.vim')
     call packager#add('andymass/vim-matchup')
+    call packager#add('unblevable/quick-scope')
     call packager#add('jeffkreeftmeijer/vim-numbertoggle')
     call packager#add('ntpeters/vim-better-whitespace')
     call packager#add('airblade/vim-rooter')
@@ -168,6 +169,17 @@ set completeopt=menu,menuone,preview,noselect
 " ale
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 50
+
+" quick-scope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary
+              \ guifg='#d70000' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary
+              \ guifg='#f57f17' gui=underline ctermfg=81 cterm=underline
+augroup END
 
 " theme
 if has('termguicolors')
