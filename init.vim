@@ -164,7 +164,7 @@ endfunction
 
 inoremap <expr><CR> <SID>smart_carriage_return()
 
-set completeopt=menu,menuone,preview,noselect
+set completeopt=menu,menuone,noselect
 
 " ale
 let g:ale_lint_on_insert_leave = 1
