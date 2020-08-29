@@ -59,7 +59,6 @@ function! PackagerInit() abort
     call packager#add('airblade/vim-rooter')
     call packager#add('justinmk/vim-sneak')
     call packager#add('simnalamburt/vim-mundo')
-    call packager#add('Yilin-Yang/vim-markbar')
     call packager#add('airblade/vim-gitgutter')
     call packager#add('vimlab/split-term.vim')
     call packager#add('qpkorr/vim-bufkill')
