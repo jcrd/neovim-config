@@ -76,6 +76,9 @@ function! PackagerInit() abort
     call packager#add('maximbaz/lightline-ale')
     call packager#add('farmergreg/vim-lastplace')
 
+    call packager#add('junegunn/goyo.vim')
+    call packager#add('junegunn/limelight.vim')
+
     if has('nvim')
         call packager#add('norcalli/nvim-colorizer.lua')
     endif
@@ -290,6 +293,12 @@ if has('nvim')
         autocmd TermOpen * startinsert
     augroup END
 endif
+
+" goyo + limelight
+augroup Goyo
+    autocmd! User GoyoEnter Limelight
+    autocmd! User GoyoLeave Limelight!
+augroup END
 
 " center current line on screen with C-l
 map <C-l> zz
