@@ -75,6 +75,7 @@ function! PackagerInit() abort
     call packager#add('dense-analysis/ale', {'type': 'opt'})
     call packager#add('maximbaz/lightline-ale')
     call packager#add('farmergreg/vim-lastplace')
+    call packager#add('AndrewRadev/splitjoin.vim')
 
     call packager#add('junegunn/goyo.vim')
     call packager#add('junegunn/limelight.vim')
