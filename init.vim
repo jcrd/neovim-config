@@ -295,9 +295,16 @@ if has('nvim')
     augroup END
 endif
 
+function! s:goyo_enter()
+    setlocal formatoptions=ant
+    setlocal textwidth=80
+    setlocal wrapmargin=0
+    Limelight
+endfunction
+
 " goyo + limelight
 augroup Goyo
-    autocmd! User GoyoEnter Limelight
+    autocmd! User GoyoEnter nested call <SID>goyo_enter()
     autocmd! User GoyoLeave Limelight!
 augroup END
 
