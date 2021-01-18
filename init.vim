@@ -173,6 +173,9 @@ set completeopt=menu,menuone,noselect
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 50
 
+nmap <silent> <C-j> <plug>(ale_next_wrap)
+nmap <silent> <C-k> <plug>(ale_previous_wrap)
+
 " quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
