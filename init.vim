@@ -122,7 +122,7 @@ augroup Lsp
                     \ 'allowlist': ['sh'],
                     \ })
     endif
-    if executable('gopls')
+    if executable('go') && executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
                     \ 'name': 'gopls',
                     \ 'cmd' : {server_info->['gopls']},

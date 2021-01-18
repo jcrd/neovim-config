@@ -1,5 +1,7 @@
 packadd ale
 
-let b:ale_linters = ['gopls']
+if executable('go') && executable('gopls')
+    let b:ale_linters = ['gopls']
+endif
 
 match ColorColumn /\%>80v.\+/
