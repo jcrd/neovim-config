@@ -1,5 +1,5 @@
 " set command-line height to avoid press-enter issue
-set cmdheight=2
+" set cmdheight=2
 
 " maintain undo history between sessions
 set undofile
