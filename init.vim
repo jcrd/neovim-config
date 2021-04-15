@@ -159,11 +159,11 @@ inoremap <expr><tab> pumvisible()? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible()? "\<c-p>" : "\<s-tab>"
 
 function s:smart_carriage_return()
-   if !pumvisible() || get(complete_info(), 'selected', -1) < 0
-      return "\<CR>"
-   else
-      return "\<C-y>"
-   endif
+    if !pumvisible() || get(complete_info(), 'selected', -1) < 0
+        return "\<CR>"
+    else
+        return "\<C-y>"
+    endif
 endfunction
 
 inoremap <expr><CR> <SID>smart_carriage_return()
@@ -181,11 +181,11 @@ nmap <silent> <C-k> <plug>(ale_previous_wrap)
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary
-              \ guifg='#d70000' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary
-              \ guifg='#f57f17' gui=underline ctermfg=81 cterm=underline
+    autocmd!
+    autocmd ColorScheme * highlight QuickScopePrimary
+                \ guifg='#d70000' gui=underline ctermfg=155 cterm=underline
+    autocmd ColorScheme * highlight QuickScopeSecondary
+                \ guifg='#f57f17' gui=underline ctermfg=81 cterm=underline
 augroup END
 
 " theme
