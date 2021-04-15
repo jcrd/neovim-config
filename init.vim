@@ -182,6 +182,7 @@ set completeopt=menu,menuone,noselect
 " ale
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 50
+let g:ale_fix_on_save = 1
 
 nmap <silent> <C-j> <plug>(ale_next_wrap)
 nmap <silent> <C-k> <plug>(ale_previous_wrap)
