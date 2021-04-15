@@ -130,6 +130,15 @@ augroup Lsp
                     \ })
         autocmd BufWritePre *.go LspDocumentFormatSync
     endif
+    if executable('typescript-language-server')
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'typescript-language-server for javascript',
+                    \ 'cmd': {server_info->['typescript-language-server', '--stdio']},
+                    \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
+                    \ 'allowlist': ['javascript', 'javascript.jsx',
+                    \ 'javascriptreact'],
+                    \ })
+    endif
 augroup END
 
 function! s:on_lsp_buffer_enabled() abort
