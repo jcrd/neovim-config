@@ -128,6 +128,7 @@ augroup Lsp
                     \ 'cmd' : {server_info->['gopls']},
                     \ 'allowlist': ['go'],
                     \ })
+        autocmd BufWritePre *.go LspDocumentFormatSync
     endif
 augroup END
 
