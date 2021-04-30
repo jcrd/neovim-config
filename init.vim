@@ -63,7 +63,7 @@ function! PackagerInit() abort
     call packager#add('vimlab/split-term.vim')
     call packager#add('qpkorr/vim-bufkill')
     call packager#add('justinmk/vim-dirvish')
-    call packager#add('vim-ctrlspace/vim-ctrlspace')
+    call packager#add('junegunn/fzf.vim')
     call packager#add('machakann/vim-highlightedyank')
     call packager#add('sheerun/vim-polyglot')
     call packager#add('itchyny/lightline.vim')
@@ -248,12 +248,13 @@ let g:lightline.active = {
             \   'linter_ok' ]]
             \ }
 
-" ctrlspace
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
+" fzf
+nnoremap <leader>b :Buffers<cr>
 
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
+augroup Fzf
+    autocmd FileType fzf set laststatus=0
+                \ | autocmd BufLeave <buffer> set laststatus=2
+augroup END
 
 " colorizer
 if has('nvim')
