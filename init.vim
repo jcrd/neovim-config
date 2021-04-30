@@ -250,6 +250,8 @@ let g:lightline.active = {
 
 " fzf
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>f :Rg<cr>
+nnoremap <leader>g "gye:exe "Rg ".@g<cr>
 
 augroup Fzf
     autocmd FileType fzf set laststatus=0
