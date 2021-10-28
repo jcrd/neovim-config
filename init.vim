@@ -48,13 +48,11 @@ function! s:packager_init(packager) abort
     call a:packager.add('tpope/vim-unimpaired')
     call a:packager.add('tpope/vim-commentary')
     call a:packager.add('tpope/vim-surround')
-    call a:packager.add('tpope/vim-fugitive')
     call a:packager.add('wellle/targets.vim')
     call a:packager.add('andymass/vim-matchup')
     call a:packager.add('unblevable/quick-scope')
     call a:packager.add('jeffkreeftmeijer/vim-numbertoggle')
     call a:packager.add('ntpeters/vim-better-whitespace')
-    call a:packager.add('airblade/vim-rooter')
     call a:packager.add('justinmk/vim-sneak')
     call a:packager.add('simnalamburt/vim-mundo')
     call a:packager.add('airblade/vim-gitgutter')
@@ -66,8 +64,8 @@ function! s:packager_init(packager) abort
     call a:packager.add('sheerun/vim-polyglot')
     call a:packager.add('itchyny/lightline.vim')
     call a:packager.add('NLKNguyen/papercolor-theme')
-    call a:packager.add('prabirshrestha/async.vim')
-    call a:packager.add('prabirshrestha/vim-lsp')
+    call a:packager.add('prabirshrestha/vim-lsp',
+                \ {'requires': 'prabirshrestha/async.vim'})
     call a:packager.add('Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'})
     call a:packager.add('lighttiger2505/deoplete-vim-lsp')
     call a:packager.add('dense-analysis/ale', {'type': 'opt'})
@@ -83,7 +81,8 @@ function! s:packager_init(packager) abort
     endif
 
     call a:packager.add('jcrd/vim-slash')
-    call a:packager.add('jcrd/vim-smart-filename')
+    call a:packager.add('jcrd/vim-smart-filename',
+                \ {'requires': ['airblade/vim-rooter', 'tpope/vim-fugitive']})
 endfunction
 
 packadd vim-packager
