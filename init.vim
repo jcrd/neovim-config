@@ -72,9 +72,12 @@ function! s:packager_init(packager) abort
     call a:packager.add('maximbaz/lightline-ale')
     call a:packager.add('farmergreg/vim-lastplace')
     call a:packager.add('AndrewRadev/splitjoin.vim')
+    call a:packager.add('tools-life/taskwiki',
+                \ {'requires': [['vimwiki/vimwiki', {'branch': 'dev'}]]})
 
     call a:packager.add('junegunn/goyo.vim')
     call a:packager.add('junegunn/limelight.vim')
+
 
     if has('nvim')
         call a:packager.add('norcalli/nvim-colorizer.lua')
@@ -155,6 +158,11 @@ augroup Lsp_install
 augroup END
 
 let g:lsp_diagnostics_enabled = 0
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/taskwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
