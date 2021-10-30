@@ -334,9 +334,6 @@ nnoremap <leader>s :split <C-R>=expand('%:p:h') . '/'<cr>
 
 " buffers
 noremap <A-Tab> :b#<cr>
-noremap <A-n> :bn<cr>
-noremap <A-p> :bp<cr>
-noremap <A-q> :bd<cr>
 " bufkill
 let g:BufKillCreateMappings = 0
 noremap <A-w> :BD<cr>
