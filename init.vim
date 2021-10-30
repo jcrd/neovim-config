@@ -48,6 +48,7 @@ function! s:packager_init(packager) abort
     call a:packager.add('tpope/vim-unimpaired')
     call a:packager.add('tpope/vim-commentary')
     call a:packager.add('tpope/vim-surround')
+    call a:packager.add('tpope/vim-vinegar')
     call a:packager.add('wellle/targets.vim')
     call a:packager.add('andymass/vim-matchup')
     call a:packager.add('unblevable/quick-scope')
@@ -58,7 +59,6 @@ function! s:packager_init(packager) abort
     call a:packager.add('airblade/vim-gitgutter')
     call a:packager.add('vimlab/split-term.vim')
     call a:packager.add('qpkorr/vim-bufkill')
-    call a:packager.add('justinmk/vim-dirvish')
     call a:packager.add('junegunn/fzf.vim')
     call a:packager.add('machakann/vim-highlightedyank')
     call a:packager.add('sheerun/vim-polyglot')
@@ -297,12 +297,6 @@ let g:netrw_dirhistmax = 0
 
 " enable line numbers
 set number relativenumber
-
-" dirvish
-augroup Dirvish
-    " disable line numbers
-    autocmd FileType dirvish setlocal nonumber norelativenumber
-augroup END
 
 " terminal
 if has('nvim')
