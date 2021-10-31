@@ -160,7 +160,7 @@ augroup END
 let g:lsp_diagnostics_enabled = 0
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/taskwiki/',
+let g:vimwiki_list = [{'path': '~/tasks/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
 
