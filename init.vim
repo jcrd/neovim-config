@@ -294,6 +294,8 @@ set expandtab
 " netrw
 " don't save history
 let g:netrw_dirhistmax = 0
+" hide dotfiles by default, toggle with `gh`
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " enable line numbers
 set number relativenumber
