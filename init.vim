@@ -51,7 +51,6 @@ function! s:packager_init(packager) abort
     call a:packager.add('tpope/vim-vinegar')
     call a:packager.add('wellle/targets.vim')
     call a:packager.add('andymass/vim-matchup')
-    call a:packager.add('unblevable/quick-scope')
     call a:packager.add('jeffkreeftmeijer/vim-numbertoggle')
     call a:packager.add('ntpeters/vim-better-whitespace')
     call a:packager.add('justinmk/vim-sneak')
@@ -190,17 +189,6 @@ let g:ale_fix_on_save = 1
 nmap <silent> <C-j> <plug>(ale_next_wrap)
 nmap <silent> <C-k> <plug>(ale_previous_wrap)
 
-" quick-scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-augroup qs_colors
-    autocmd!
-    autocmd ColorScheme * highlight QuickScopePrimary
-                \ guifg='#d70000' gui=underline ctermfg=155 cterm=underline
-    autocmd ColorScheme * highlight QuickScopeSecondary
-                \ guifg='#f57f17' gui=underline ctermfg=81 cterm=underline
-augroup END
-
 " theme
 if has('termguicolors')
     set termguicolors
@@ -275,6 +263,11 @@ let g:highlightedyank_highlight_duration = 150
 
 " sneak
 let g:sneak#label = 1
+
+map f <plug>Sneak_f
+map F <plug>Sneak_F
+map t <plug>Sneak_t
+map T <plug>Sneak_T
 
 " mundo
 let g:mundo_prefer_python3 = 1
