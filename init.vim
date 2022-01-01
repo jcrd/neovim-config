@@ -60,6 +60,7 @@ function! s:packager_init(packager) abort
     call a:packager.add('vimlab/split-term.vim')
     call a:packager.add('qpkorr/vim-bufkill')
     call a:packager.add('junegunn/fzf.vim')
+    call a:packager.add('kana/vim-altr')
     call a:packager.add('machakann/vim-highlightedyank')
     call a:packager.add('sheerun/vim-polyglot')
     call a:packager.add('itchyny/lightline.vim')
@@ -259,6 +260,10 @@ augroup Fzf
     autocmd FileType fzf set laststatus=0
                 \ | autocmd BufLeave <buffer> set laststatus=2
 augroup END
+
+" altr
+nmap <leader>a <plug>(altr-forward)
+nmap <leader>A <plug>(altr-back)
 
 " colorizer
 if has('nvim')
