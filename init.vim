@@ -339,6 +339,8 @@ nnoremap <leader>n :set number! relativenumber!<cr>
 nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<cr>
 nnoremap <leader>s :split <C-R>=expand('%:p:h') . '/'<cr>
 
+nnoremap <leader>x :Explore<cr>
+
 " buffers
 noremap <A-Tab> :b#<cr>
 " bufkill
