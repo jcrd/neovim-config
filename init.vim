@@ -71,7 +71,6 @@ function! s:packager_init(packager) abort
     call a:packager.add('dense-analysis/ale', {'type': 'opt'})
     call a:packager.add('maximbaz/lightline-ale')
     call a:packager.add('farmergreg/vim-lastplace')
-    call a:packager.add('AndrewRadev/splitjoin.vim')
     call a:packager.add('tools-life/taskwiki',
                 \ {'requires': [['vimwiki/vimwiki', {'branch': 'dev'}]]})
 
