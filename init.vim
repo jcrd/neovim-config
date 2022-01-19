@@ -60,7 +60,6 @@ function! s:packager_init(packager) abort
     call a:packager.add('qpkorr/vim-bufkill')
     call a:packager.add('junegunn/fzf.vim')
     call a:packager.add('kana/vim-altr')
-    call a:packager.add('machakann/vim-highlightedyank')
     call a:packager.add('sheerun/vim-polyglot')
     call a:packager.add('itchyny/lightline.vim')
     call a:packager.add('NLKNguyen/papercolor-theme')
@@ -257,9 +256,6 @@ if has('nvim')
     nnoremap <leader>c :ColorizerToggle<cr>
 endif
 
-" highlightedyank
-let g:highlightedyank_highlight_duration = 150
-
 " sneak
 let g:sneak#label = 1
 
@@ -296,6 +292,9 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " enable line numbers
 set number relativenumber
+
+" highlight yanked text
+au TextYankPost * silent! lua vim.highlight.on_yank()
 
 " terminal
 if has('nvim')
