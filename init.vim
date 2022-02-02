@@ -56,6 +56,7 @@ function! s:packager_init(packager) abort
     call a:packager.add('justinmk/vim-sneak')
     call a:packager.add('simnalamburt/vim-mundo')
     call a:packager.add('airblade/vim-gitgutter')
+    call a:packager.add('f-person/git-blame.nvim')
     call a:packager.add('vimlab/split-term.vim')
     call a:packager.add('qpkorr/vim-bufkill')
     call a:packager.add('junegunn/fzf.vim')
@@ -250,6 +251,10 @@ augroup END
 " altr
 nmap <leader>a <plug>(altr-forward)
 nmap <leader>A <plug>(altr-back)
+
+" git-blame
+let g:gitblame_enabled = 0
+nmap <leader>m :GitBlameToggle<cr>
 
 " colorizer
 if has('nvim')
