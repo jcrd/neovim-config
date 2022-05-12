@@ -14,6 +14,9 @@ endif
 " set clipboard to X11 clipboard selection
 set clipboard=unnamedplus
 
+" enable mouse
+set mouse=a
+
 " change working dir to that of current file
 " set autochdir
 
