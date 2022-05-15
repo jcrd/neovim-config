@@ -1,6 +1,3 @@
-" set command-line height to avoid press-enter issue
-" set cmdheight=2
-
 " maintain undo history between sessions
 set undofile
 
@@ -16,9 +13,6 @@ set clipboard=unnamedplus
 
 " enable mouse
 set mouse=a
-
-" change working dir to that of current file
-" set autochdir
 
 " split window below and to the right
 set splitbelow
@@ -40,40 +34,6 @@ let inccommand = 'nosplit'
 
 let mapleader = "\<Space>"
 
-" packager {{{
-function! s:packager_init(packager) abort
-    call a:packager.add('kristijanhusak/vim-packager', {'type': 'opt'})
-
-    call a:packager.add('tpope/vim-sensible')
-    call a:packager.add('tpope/vim-repeat')
-    call a:packager.add('tpope/vim-unimpaired')
-    call a:packager.add('tpope/vim-commentary')
-    call a:packager.add('tpope/vim-surround')
-    call a:packager.add('tpope/vim-vinegar')
-
-    call a:packager.add('simnalamburt/vim-mundo')
-    call a:packager.add('junegunn/fzf.vim')
-    call a:packager.add('kana/vim-altr')
-    call a:packager.add('vimlab/split-term.vim')
-
-    call a:packager.add('ntpeters/vim-better-whitespace')
-    call a:packager.add('farmergreg/vim-lastplace')
-
-    call a:packager.add('airblade/vim-gitgutter')
-    call a:packager.add('f-person/git-blame.nvim')
-
-    call a:packager.add('itchyny/lightline.vim')
-    call a:packager.add('NLKNguyen/papercolor-theme')
-
-    call a:packager.add('jcrd/vim-slash')
-    call a:packager.add('jcrd/vim-smart-filename',
-                \ {'requires': ['airblade/vim-rooter', 'tpope/vim-fugitive']})
-endfunction
-
-packadd vim-packager
-call packager#setup(function('s:packager_init'))
-" }}}
-
 " theme
 if has('termguicolors')
     set termguicolors
@@ -81,64 +41,17 @@ endif
 
 let g:PaperColor_Theme_Options = {
             \ 'theme': {
-            \   'default.light': {
-            \       'allow_italic': 1,
-            \       'override': {
-            \           'color00': ['#fafafa', ''],
-            \ }}}}
+                \   'default.light': {
+                    \       'allow_italic': 1,
+                    \       'override': {
+                        \           'color00': ['#fafafa', ''],
+                        \ }}}}
+let g:lightline = { 'colorscheme': 'PaperColor' }
+
 set background=light
 colorscheme PaperColor
 
-" rooter
-let g:rooter_change_directory_for_non_project_files = 'current'
-
 set noshowmode
-
-" lightline
-let g:lightline = {'colorscheme': 'PaperColor'}
-
-let g:lightline.component_function = {
-            \ 'filename': 'SmartFilename',
-            \ }
-
-let g:lightline.active = {
-            \ 'left': [[ 'mode', 'paste' ],
-            \   [ 'readonly', 'filename', 'modified' ]],
-            \ 'right': [[ 'lineinfo' ], [ 'percent' ],
-            \   [ 'filetype' ]],
-            \ }
-
-" fzf
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>f :Rg<cr>
-nnoremap <leader>g "gye:exe "Rg ".@g<cr>
-
-augroup Fzf
-    autocmd FileType fzf set laststatus=0
-                \ | autocmd BufLeave <buffer> set laststatus=2
-augroup END
-
-" altr
-nmap <leader>a <plug>(altr-forward)
-nmap <leader>A <plug>(altr-back)
-
-" git-blame
-let g:gitblame_enabled = 0
-nmap <leader>m :GitBlameToggle<cr>
-
-" mundo
-let g:mundo_prefer_python3 = 1
-nnoremap <leader>u :MundoToggle<cr>
-
-" split-term
-if has('nvim')
-    nnoremap <leader>t :Term<cr>
-else
-    nnoremap <leader>t :term<cr>
-endif
-
-" slash
-noremap <plug>(slash-after) zz
 
 " indentation
 set tabstop=4

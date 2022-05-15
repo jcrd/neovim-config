@@ -1,3 +1,21 @@
-[submodule "pack/packager/opt/vim-packager"]
-	path = pack/packager/opt/vim-packager
-	url = https://github.com/kristijanhusak/vim-packager.git
+[submodule "pack/submodules/start/vim-sensible"]
+	path = pack/submodules/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "pack/submodules/start/vim-commentary"]
+	path = pack/submodules/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "pack/submodules/start/vim-surround"]
+	path = pack/submodules/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/submodules/start/vim-vinegar"]
+	path = pack/submodules/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "pack/submodules/start/vim-lastplace"]
+	path = pack/submodules/start/vim-lastplace
+	url = https://github.com/farmergreg/vim-lastplace
+[submodule "pack/submodules/start/lightline.vim"]
+	path = pack/submodules/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "pack/submodules/start/papercolor-theme"]
+	path = pack/submodules/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
