@@ -21,9 +21,6 @@ set splitright
 " allow any buffer to be hidden without saving it
 set hidden
 
-" set window title
-set title
-
 " ignore case in search
 set ignorecase
 " unless search contains capitals
